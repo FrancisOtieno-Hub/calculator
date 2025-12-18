@@ -1,36 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Calculator PWA</title>
-<link rel="manifest" href="manifest.json" />
-<link rel="stylesheet" href="styles.css" />
-<meta name="theme-color" content="#111" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Calculator PWA</title>
+
+  <link rel="manifest" href="manifest.json" />
+  <link rel="stylesheet" href="styles.css" />
+  <meta name="theme-color" content="#111827" />
 </head>
 <body>
-<div class="calculator">
-<div id="display">0</div>
-<div class="keys">
-<button class="op">C</button>
-<button class="op">÷</button>
-<button class="op">×</button>
-<button class="op">⌫</button>
 
+  <div class="app">
+    <div class="calculator">
+      <div id="display">0</div>
 
-<button>7</button><button>8</button><button>9</button><button class="op">−</button>
-<button>4</button><button>5</button><button>6</button><button class="op">+</button>
-<button>1</button><button>2</button><button>3</button><button class="equal">=</button>
-<button class="zero">0</button><button>.</button>
-</div>
-</div>
+      <div class="keys">
+        <button class="op">C</button>
+        <button class="op">÷</button>
+        <button class="op">×</button>
+        <button class="op">⌫</button>
 
+        <button>7</button><button>8</button><button>9</button><button class="op">−</button>
+        <button>4</button><button>5</button><button>6</button><button class="op">+</button>
+        <button>1</button><button>2</button><button>3</button><button class="equal">=</button>
+        <button class="zero">0</button><button>.</button>
+      </div>
+    </div>
 
-<script src="app.js"></script>
-<script>
-if ('serviceWorker' in navigator) {
-navigator.serviceWorker.register('sw.js');
-}
-</script>
+    <div class="history">
+      <h3>History</h3>
+      <ul id="history-list"></ul>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('sw.js');
+    }
+  </script>
 </body>
 </html>
