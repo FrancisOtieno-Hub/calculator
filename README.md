@@ -87,8 +87,6 @@ The app uses a simple state machine to ensure correct behavior after calculation
 
 ## Customization Ideas
 
-* Add keyboard input support
-* Add calculation history
 * Add light / dark theme toggle
 * Convert to a teaching PWA for classrooms
 * Package as an APK using Bubblewrap
