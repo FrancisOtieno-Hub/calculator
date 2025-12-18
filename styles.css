@@ -1,50 +1,116 @@
-body {
-background: #0f172a;
-display: flex;
-align-items: center;
-justify-content: center;
-height: 100vh;
-font-family: system-ui, sans-serif;
+* {
+  box-sizing: border-box;
 }
 
+body {
+  background: linear-gradient(145deg, #020617, #0f172a);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
 .calculator {
-width: 320px;
-background: #020617;
-border-radius: 16px;
-box-shadow: 0 20px 40px rgba(0,0,0,.6);
-overflow: hidden;
+  width: 320px;
+  background: #020617;
+  border-radius: 20px;
+  box-shadow: 0 25px 50px rgba(0,0,0,.7);
+  overflow: hidden;
 }
-
 
 #display {
-background: #020617;
-color: #e5e7eb;
-font-size: 2.5rem;
-padding: 20px;
-text-align: right;
+  background: #020617;
+  color: #e5e7eb;
+  font-size: 2.6rem;
+  padding: 24px 20px;
+  text-align: right;
+  user-select: none;
 }
-
 
 .keys {
-display: grid;
-grid-template-columns: repeat(4, 1fr);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: #020617;
 }
-
 
 button {
-padding: 22px;
-font-size: 1.2rem;
-border: none;
-background: #111827;
-color: #f9fafb;
-cursor: pointer;
+  padding: 22px;
+  font-size: 1.25rem;
+  border: none;
+  background: #111827;
+  color: #f9fafb;
+  cursor: pointer;
+  transition: background .15s ease, transform .05s ease;
 }
 
+button:hover {
+  background: #1f2937;
+}
 
-button:hover { background: #1f2933; }
+button:active {
+  transform: translateY(1px);
+}
 
+.op {
+  background: #1e293b;
+  color: #38bdf8;
+}
 
-.op { background: #1e293b; color: #38bdf8; }
-.equal { background: #2563eb; grid-row: span 2; }
-.zero { grid-column: span 2; }
+.op:hover {
+  background: #334155;
+}
+
+.equal {
+  background: linear-gradient(180deg, #2563eb, #1d4ed8);
+  color: #fff;
+  grid-row: span 2;
+}
+
+.equal:hover {
+  background: linear-gradient(180deg, #3b82f6, #2563eb);
+}
+
+.zero {
+  grid-column: span 2;
+}
+
+/* History Panel */
+
+.history {
+  width: 320px;
+  margin-top: 16px;
+  background: #020617;
+  border-radius: 12px;
+  padding: 12px;
+  color: #e5e7eb;
+  font-size: .9rem;
+}
+
+.history h3 {
+  margin: 0 0 8px;
+  font-size: .85rem;
+  color: #94a3b8;
+}
+
+.history ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-height: 140px;
+  overflow-y: auto;
+}
+
+.history li {
+  padding: 4px 0;
+  border-bottom: 1px solid #1e293b;
+  font-family: monospace;
+}
